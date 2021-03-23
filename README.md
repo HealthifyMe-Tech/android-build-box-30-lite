@@ -31,7 +31,7 @@ You can use this docker image to build your Android project with a single docker
 ## Docker Build Image
 
 If you want to build the docker image by yourself, you can use following command.
-The image itself is more than 5 GB, check your free disk space before building it.
+The image will take itself more than 1 GB, check your free disk space before building it.
 
     docker build -t android-build-lite .
 
