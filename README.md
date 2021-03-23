@@ -15,14 +15,7 @@ It includes the following components:
 * Android SDK 30
 * Android build tools 30.0.0
 * Open JDK8, git, curl, wget, unzip, 
-* Python, Pip
-
-
-## Docker Pull Command
-
-The docker image is publicly automated build on [Docker Hub](https://hub.docker.com/r/sreejithhme/android-build-lite/) based on the Dockerfile in this repo, so there is no hidden stuff in it. To pull the latest docker image:
-
-    docker pull sreejithhme/android-build-lite:latest
+* Python 2.7, Pip 2
 
 
 ## Usage
@@ -33,24 +26,6 @@ You can use this docker image to build your Android project with a single docker
 
     cd <android project directory>  # change working directory to your project root directory.
     docker run --rm -v `pwd`:/project sreejithhme/android-build-lite bash -c 'cd /project; ./gradlew build'
-
-
-
-### Use the image for a Bitbucket pipeline
-
-If you have an Android project in a Bitbucket repository and want to use its pipeline to build it, you can simply specify this docker image.
-Here is an example of `bitbucket-pipelines.yml`
-
-    image: sreejithhme/android-build-lite:latest
-
-    pipelines:
-      default:
-        - step:
-            script:
-              - chmod +x gradlew
-              - ./gradlew assemble
-
-If gradlew is marked as executable in your repository as recommended, remove the `chmod` command.
 
 
 ## Docker Build Image
